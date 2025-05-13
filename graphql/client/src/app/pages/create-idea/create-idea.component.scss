@@ -1,0 +1,15 @@
+.headline-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 75px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.save-button {
+    margin-bottom: 75px;
+}

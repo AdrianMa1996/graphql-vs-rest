@@ -1,0 +1,201 @@
+body {
+    font-family: Arial;
+    color: #2F2E2E;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-weight-normal {
+    font-weight: normal;
+}
+
+.font-size-big {
+    font-size: 30px;
+}
+
+.font-size-small {
+    font-size: 15px;
+}
+
+.without-margin-and-padding {
+    margin: 0px;
+    padding: 0px;
+}
+
+input{
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #1473E6;
+    padding: 0 10px;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid #2F2E2E;
+}
+
+textarea{
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    resize: none;
+    height: 500px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #1473E6;
+    padding: 10px;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+textarea:focus{
+    outline: none;
+    border: 1px solid #2F2E2E;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #1473E6;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"]:before{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "\2713";
+    height: 100%;
+    width: 100%;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #1473E6;
+}
+
+.checkbox-custom {
+    display: none;
+}
+
+.checkbox-custom + label {
+    cursor: pointer;
+}
+
+.checkbox-custom + label > div {
+    cursor: pointer;
+}
+
+.checkbox-custom + label > div + div {
+    display: none;
+}
+
+.checkbox-custom:checked + label > div {
+    display: none;
+}
+
+.checkbox-custom:checked + label > div + div {
+    display: block;
+}
+
+.label{
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+.div-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: 0px;
+    border-radius: 0px;
+    background-color: #1473E6;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+button{
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: 0px;
+    border-radius: 0px;
+    background-color: #1473E6;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+.button-gray{
+    color: #2F2E2E;
+    background-color: #D5D5D5;
+}
+
+.button-red{
+    color: #FFFFFF;
+    background-color: #FF4339;
+}
+
+.button-green{
+    color: #FFFFFF;
+    background-color: #44B556;
+}
+
+hr{
+    height: 1px;
+    border: none;
+    background-color: #D5D5D5;
+    margin: 0px;
+    margin-top: 15px;
+}
+
+
+.large-content-wrapper {
+    margin: 0 auto;
+    width: 1500px;
+}
+
+.small-content-wrapper {
+    margin: 0 auto;
+    width: 1050px;
+}
+
+.hide {
+    display: none;
+}
+
+.clickable {
+    cursor: pointer;
+}

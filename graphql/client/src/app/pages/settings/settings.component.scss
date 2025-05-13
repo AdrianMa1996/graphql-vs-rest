@@ -1,0 +1,47 @@
+.settings-headline{
+    margin-top: 75px;
+}
+
+.users-container {
+    width: 100%;
+    border: 1px solid #D5D5D5;
+    padding: 15px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.user-container {
+    background-color: #F8F8F8;
+    border: 1px solid #D5D5D5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 15px;
+}
+
+.username-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+}
+
+.edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 15px;
+}
+
+.edit {
+    height: 35px;
+    width: 35px;
+    vertical-align: middle;
+}
+
+.create-user-button {
+    margin-bottom: 75px;
+}

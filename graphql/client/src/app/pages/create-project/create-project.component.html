@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<div class="small-content-wrapper">
+    <div class="delete-project-container">
+        <div class="edit-project-container">
+            <h1>Projekt erstellen</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="logo-container">
+        <img class="logo" [src]="projectLogo ? 'data:image/png;base64,' + projectLogo : 'images/default-project-picture.png'">
+        <input id="projectLogoUpload" class="hide" type="file" accept="image/png" (change)="onFileSelected($event)">
+        <label for="projectLogoUpload">
+            <div class="div-button button-gray clickable">
+                <p>Bild hochladen</p>
+            </div>
+        </label>
+    </div>
+    <p class="label font-weight-bold">Projektname</p>
+    <input name="projectname" type="text" placeholder="Projektname" [(ngModel)]="projectName">
+    <button class="save-button clickable" (click)="createProject()">Projekt erstellen und speichern</button>
+
+</div>
+
+<app-footer></app-footer>

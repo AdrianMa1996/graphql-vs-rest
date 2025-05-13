@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<div class="small-content-wrapper">
+    <div class="logout-container">
+        <div class="edit-profile-container">
+            <h1>Profil bearbeiten</h1>
+        </div>
+        <div class="logout-button-container">
+            <button class="button-gray logout-button clickable" (click)="logout()">ausloggen</button>
+        </div>
+    </div>
+    <hr>
+    <div class="profile-picture-container">
+        <img class="profile-picture" [src]="user.profilPicture ? 'data:image/png;base64,' + user.profilPicture : 'images/default-profil-picture.png'">
+        <input id="userProfilPictureUpload" class="hide" type="file" accept="image/png" (change)="onFileSelected($event)">
+        <label for="userProfilPictureUpload">
+            <div class="div-button button-gray clickable">
+                <p>Bild hochladen</p>
+            </div>
+        </label>
+    </div>
+    <p class="label font-weight-bold">Name</p>
+    <input name="name" type="text" placeholder="Name" [(ngModel)]="user.name">
+    <p class="label font-weight-bold">E-Mail-Adresse</p>
+    <input name="email" type="text" placeholder="E-Mail-Adresse" [(ngModel)]="user.email">
+    <p class="label font-weight-bold">Passwort</p>
+    <input name="password" type="text" placeholder="Passwort" [(ngModel)]="user.password">
+    <button class="save-button clickable" (click)="updateUser()">speichern</button>
+</div>
+
+<app-footer></app-footer>

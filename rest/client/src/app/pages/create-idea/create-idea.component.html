@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="small-content-wrapper">
+    <div class="headline-container">
+        <div class="header-container">
+            <h1>Idee hinzufügen</h1>
+        </div>
+    </div>
+    <hr>
+    <p class="label font-weight-bold">Titel</p>
+    <input name="name" type="text" placeholder="Titel" [(ngModel)]="contribution.title">
+    <p class="label font-weight-bold">Beschreibungstext</p>
+    <textarea placeholder="Beschreibungstext schreiben" [(ngModel)]="contribution.text"></textarea>
+    <button class="save-button clickable" (click)="createContribution()">Idee erstellen</button>
+</div>
+
+<app-footer></app-footer>

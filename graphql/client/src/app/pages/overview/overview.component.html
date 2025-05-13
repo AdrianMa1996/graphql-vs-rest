@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<div class="large-content-wrapper">
+    <div class="grid-container">
+        @for (project of projects; track project) {
+            <div class="grid-item clickable" routerLink="/discussions/{{ project.projectID }}">
+                <img class="project-logo" src="{{'data:image/png;base64,' + project.logo}}">
+                <div class="project-title">
+                    @if(canEditProject(project.projectID)){<img class="settings-icon" src="images/settings.png" routerLink="/edit-project/{{ project.projectID }}">}
+                    <h1>{{ project.name }}</h1>
+                </div>
+            </div>
+        }
+        @if(isAdmin){
+        <div class="grid-item clickable" routerLink="/create-project">
+            <img class="project-logo" src="images/logo-new-project.png">
+            <div class="project-title">
+                <h1>Neues Projekt hinzufügen</h1>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<app-footer></app-footer>

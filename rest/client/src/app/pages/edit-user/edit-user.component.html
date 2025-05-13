@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<div class="small-content-wrapper">
+    <div class="logout-container">
+        <div class="edit-profile-container">
+            <h1>Benutzer bearbeiten</h1>
+        </div>
+        <div class="logout-button-container">
+            <button class="button-red logout-button clickable" (click)="deleteUser()">Benutzer löschen</button>
+        </div>
+    </div>
+    <hr>
+    <p class="label font-weight-bold">Name</p>
+    <input name="name" type="text" placeholder="Name" [(ngModel)]="user.name">
+    <p class="label font-weight-bold">E-Mail-Adresse</p>
+    <input name="email" type="text" placeholder="E-Mail-Adresse" [(ngModel)]="user.email">
+    <p class="label font-weight-bold">Passwort</p>
+    <input name="password" type="text" placeholder="Passwort" [(ngModel)]="user.password">
+    <p class="label font-weight-bold">Adminrechte</p>
+
+    <div class="checkbox-container">
+        <input type="checkbox" id="checkbox1" name="option1" [(ngModel)]="isAdmin">
+        <label for="checkbox1">Ja</label>
+    </div>
+
+    <button class="save-button clickable" (click)="updateUser()">speichern</button>
+</div>
+
+<app-footer></app-footer>

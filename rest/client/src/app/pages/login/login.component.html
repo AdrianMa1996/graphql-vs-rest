@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<div class="large-content-wrapper">
+    <div class="login-container">
+        <h1>Anmelden</h1>
+        <input name="name" type="text" placeholder="Name" [(ngModel)]="loginDto.name">
+        <input name="password" type="text" placeholder="Passwort" [(ngModel)]="loginDto.password">
+        <button class="clickable" type="login-button" (click)="login()">Anmelden</button>
+    </div>
+</div>
+
+<app-footer></app-footer>

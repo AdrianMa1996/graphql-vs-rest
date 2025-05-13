@@ -1,0 +1,12 @@
+<div class="background-container-gray">
+    <div class="large-content-wrapper">
+        <div class="grid-container">
+            <div class="grid-item-left">
+                <img class="logo clickable" src="images/logo.png" routerLink="">
+            </div>
+            <div class="grid-item-right">
+                <img class="profil-picture clickable" [src]="user.profilPicture ? 'data:image/png;base64,' + user.profilPicture : 'images/default-profil-picture.png'" [routerLink]="'/edit-profile/' + userId">
+            </div>
+        </div>
+    </div>
+</div>

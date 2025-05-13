@@ -1,0 +1,56 @@
+.background-container-gray {
+    background-color: #F8F8F8;
+    border-color: #D5D5D5;
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+.grid-container {
+    height: 180px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-item-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.grid-item-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.social-media-image {
+    height: 45px;
+    vertical-align: middle;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 180px;
+}
+
+.margin-right {
+    margin-right: 50px;
+}

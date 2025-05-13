@@ -1,0 +1,32 @@
+.logout-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 75px;
+}
+
+.edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.logout-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.logout-button{
+    width: 225px;
+}
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: start;
+}
+
+.save-button {
+    margin-bottom: 75px;
+}

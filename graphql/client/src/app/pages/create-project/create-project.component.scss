@@ -1,0 +1,87 @@
+.delete-project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 75px;
+}
+
+.edit-project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.delete-project-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.delete-project-button {
+    width: 225px;
+}
+
+.logo-container{
+    width: 225px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.logo {
+    height: 225px;
+    width: 225px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.developers-container {
+    width: 100%;
+    border: 1px solid #D5D5D5;
+    padding: 15px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.developer-container-unchecked {
+    background-color: #F8F8F8;
+    border: 1px solid #D5D5D5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 15px;
+}
+
+.developer-container-checked {
+    background-color: #F8F8F8;
+    border: 1px solid #44B556;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 15px;
+}
+
+.developername-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+}
+
+.developer-ok-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 15px;
+}
+
+.ok-image {
+    height: 35px;
+    width: 35px;
+    vertical-align: middle;
+}
+
+.save-button {
+    margin-bottom: 75px;
+}

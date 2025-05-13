@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+
+<div class="large-content-wrapper">
+    <div class="post-grid-container">
+        <div class="post-container-profil-picture">
+            <img class="profil-picture" src="{{'data:image/png;base64,' + contribution.creator.profilPicture}}">
+        </div>
+        <div class="post-container-comment">
+            <div class="post-container-comment-header">
+                <div>
+                    <p class="font-weight-bold without-margin-and-padding">{{ contribution.creator.name }}</p>
+                    <p class="font-size-small without-margin-and-padding">{{ contribution.date }}</p>
+                </div>
+                <input type="checkbox" id="checkbox-lock" class="checkbox-custom" [checked]="contribution.status === 'closed' "(change)=" toggleContributionStatus()">
+                <label for="checkbox-lock">
+                    <div>
+                        <img class="lock-icon" src="images/lock-open.png">
+                    </div>
+                    <div>
+                        <img class="lock-icon" src="images/lock-closed.png">
+                    </div>
+                </label>
+            </div>
+            <div class="post-container-comment-content">
+                <div>
+                    <input type="checkbox" id="checkbox-counter-container" class="checkbox-custom" [checked]="hasUserVoted()" (change)="toggleVote()">
+                    <label for="checkbox-counter-container">
+                        <div>
+                            <div class="voting-container">
+                                <div class="voting-counter-container-gray">
+                                    <p class="font-size-big without-margin-and-padding">{{ contribution.votes.length }}</p>
+                                </div>
+                                <div class="div-button button-gray vote-button">Abstimmen</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="voting-container">
+                                <div class="voting-counter-container-green">
+                                    <p class="font-size-big without-margin-and-padding">{{ contribution.votes.length }}</p>
+                                </div>
+                                <div class="div-button button-green vote-button">Abgestimmt</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <h2 class="font-weight-normal">{{ contribution.title }}</h2>
+                    <p style="white-space: pre-line;">{{ contribution.text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comments-number-container">
+        <img class="comment-icon" src="images/comment.png">
+        <h1>{{ contribution.comments.length }}</h1>
+        <h1>&nbsp;Kommentare</h1>
+    </div>
+    <hr>
+    <div class="comments-container">
+        @for (comment of contribution.comments; track comment) {
+            <div class="comment-grid-container">
+                <div class="post-container-profil-picture">
+                    <img class="profil-picture" src="{{'data:image/png;base64,' + comment.creator.profilPicture}}">
+                </div>
+                <div class="post-container-comment">
+                    <div class="post-container-comment-header">
+                        <div>
+                            <p class="font-weight-bold without-margin-and-padding">{{ comment.creator.name }}</p>
+                            <p class="font-size-small without-margin-and-padding">{{ comment.date }}</p>
+                        </div>
+                    </div>
+                    <div class="post-container-comment-text">
+                        <p style="white-space: pre-line;">{{ comment.text }}</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <hr>
+</div>
+<div class="small-content-wrapper">
+    <div class="write-comment-container">
+        <h1>Füge einen Kommentar hinzu</h1>
+        <textarea placeholder="Kommentar schreiben" [(ngModel)]="comment.text"></textarea>
+        <button class="clickable" (click)="createComment()">Kommentar posten</button>
+    </div>
+</div>
+
+<app-footer></app-footer>

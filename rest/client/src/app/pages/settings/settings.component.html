@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="small-content-wrapper">
+    <h1 class="settings-headline">Benutzer verwalten</h1>
+    <hr>
+    <div class="users-container" >
+        @for (user of users; track user) {
+            <div class="user-container clickable" routerLink="/edit-user/{{ user.userID }}">
+                <div class="username-container">
+                    <p class="font-weight-bold">{{ user.name }}</p>
+                </div>
+                <div class="edit-container">
+                    <img class="edit" src="images/edit.png">
+                </div>
+            </div>
+        }
+    </div>
+    <button class="create-user-button clickable" routerLink="/create-user">Benutzer erstellen</button>
+</div>
+
+<app-footer></app-footer>
+

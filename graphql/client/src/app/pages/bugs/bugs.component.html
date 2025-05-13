@@ -1,0 +1,150 @@
+<app-navbar></app-navbar>
+
+<div class="large-content-wrapper">
+    <div class="menu-grid-container">
+        <div class="inactive-menu-button clickable" routerLink="/discussions/{{ projectId }}">
+            <p class="font-weight-bold">Diskussionen</p>
+        </div>
+        <div class="inactive-menu-button clickable" routerLink="/ideas/{{ projectId }}">
+            <p class="font-weight-bold">Ideen</p>
+        </div>
+        <div class="active-menu-button clickable" routerLink="/bugs/{{ projectId }}">
+            <p class="font-weight-bold">Fehler</p>
+        </div>
+        <div class="inactive-menu-button">
+        </div>
+    </div>
+    <div class="posts-grid-container">
+        <div class="posts-container">
+            @for (contribution of contributions; track contribution) {
+                <div class="post-grid-container">
+                    <div>
+                        <input type="checkbox" [id]="'Checkbox-vote-' + contribution.contributionID" class="checkbox-custom" [checked]="hasUserVoted(contribution)" (change)="toggleVote(contribution)">
+                        <label [for]="'Checkbox-vote-' + contribution.contributionID">
+                            <div>
+                                <div class="voting-container">
+                                    <div class="voting-counter-container-gray">
+                                        <p class="font-size-big without-margin-and-padding">{{ contribution.votes.length }}</p>
+                                    </div>
+                                    <div class="div-button button-gray vote-button">Abstimmen</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="voting-container">
+                                    <div class="voting-counter-container-green">
+                                        <p class="font-size-big without-margin-and-padding">{{ contribution.votes.length }}</p>
+                                    </div>
+                                    <div class="div-button button-green vote-button">Abgestimmt</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="post-container">
+                        <div class="clickable" routerLink="/bug/{{ contribution.contributionID }}">
+                            <h2 class="font-weight-normal">
+                                {{ contribution.title | slice:0:50 }}
+                                {{ contribution.title.length > 50 ? '...' : '' }}
+                            </h2>
+                            <p>
+                                {{ contribution.text | slice:0:290 }}
+                                {{ contribution.text.length > 290 ? '...' : '' }}
+                              </p>
+                            <div class="post-info-container">
+                                <img class="date-icon" src="images/date.png">
+                                <p class="font-size-small">{{ contribution.date }}</p>
+                                <img class="comment-icon" src="images/comment.png">
+                                <p class="font-size-small">{{ contribution.comments.length }}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" [id]="'Checkbox-lock-' + contribution.contributionID" class="checkbox-custom" [checked]="contribution.status === 'closed' "(change)=" toggleContributionStatus(contribution)">
+                            <label [for]="'Checkbox-lock-' + contribution.contributionID">
+                                <div>
+                                    <img class="lock-icon" src="images/lock-open.png">
+                                </div>
+                                <div>
+                                    <img class="lock-icon" src="images/lock-closed.png">
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="posts-menu-container">
+            <button class="clickable" routerLink="/create-bug/{{ projectId }}">Neuen Fehler hinzufügen</button>
+            <div class="sorting-container">
+                <p class="menu-items-header">Sortieren</p>
+                <div>
+                    <input type="checkbox" name="sortOption" id="checkbox-newest" class="checkbox-custom" [checked]="statusSorter === 'newest'" (change)="toggleSorter('newest')">
+                    <label for="checkbox-newest">
+                        <div>
+                            <div class="menu-item-unchecked">
+                                <p class="font-weight-bold">Neueste</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="menu-item-checked">
+                                <p class="font-weight-bold">Neueste</p>
+                                <img class="close-image" src="images/close-white.png">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" name="sortOption" id="checkbox-oldest" class="checkbox-custom" [checked]="statusSorter === 'oldest'" (change)="toggleSorter('oldest')">
+                    <label for="checkbox-oldest">
+                        <div>
+                            <div class="menu-item-unchecked">
+                                <p class="font-weight-bold">Älteste</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="menu-item-checked">
+                                <p class="font-weight-bold">Älteste</p>
+                                <img class="close-image" src="images/close-white.png">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="filter-container">
+                <p class="menu-items-header">Filtern nach</p>
+                <div>
+                    <input type="checkbox" id="checkbox-open" class="checkbox-custom" [(ngModel)]="filterOpen" (change)="loadContributions()">
+                    <label for="checkbox-open">
+                        <div>
+                            <div class="menu-item-unchecked">
+                                <p class="font-weight-bold">Offen</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="menu-item-checked">
+                                <p class="font-weight-bold">Offen</p>
+                                <img class="close-image" src="images/close-white.png">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="checkbox-closed" class="checkbox-custom" [(ngModel)]="filterClosed" (change)="loadContributions()">
+                    <label for="checkbox-closed">
+                        <div>
+                            <div class="menu-item-unchecked">
+                                <p class="font-weight-bold">Geschlossen</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="menu-item-checked">
+                                <p class="font-weight-bold">Geschlossen</p>
+                                <img class="close-image" src="images/close-white.png">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

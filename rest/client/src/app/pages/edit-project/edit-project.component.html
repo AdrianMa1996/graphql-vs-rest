@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+
+<div class="small-content-wrapper">
+    <div class="delete-project-container">
+        <div class="edit-project-container">
+            <h1>Projekt bearbeiten</h1>
+        </div>
+        <div class="delete-project-button-container">
+            <button class="button-red delete-project-button clickable" (click)="deleteProject()">Projekt löschen</button>
+        </div>
+    </div>
+    <hr>
+    <div class="logo-container">
+        <img class="logo" [src]="project.logo ? 'data:image/png;base64,' + project.logo : 'images/default-project-picture.png'">
+        <input id="projectLogoUpload" class="hide" type="file" accept="image/png" (change)="onFileSelected($event)">
+        <label for="projectLogoUpload">
+            <div class="div-button button-gray clickable">
+                <p>Bild hochladen</p>
+            </div>
+        </label>
+    </div>
+    <p class="label font-weight-bold">Projektname</p>
+    <input name="projectname" type="text" placeholder="Projektname" [(ngModel)]="project.name">
+    <p class="label font-weight-bold">Developer</p>
+    <div class="developers-container">
+        @for (user of users; track user) {
+            <div>
+                <input type="checkbox" [id]="'Checkbox-' + user.userID" class="checkbox-custom" [(ngModel)]="developerBindings[user.userID]">
+                <label [for]="'Checkbox-' + user.userID">
+                    <div>
+                        <div class="developer-container-unchecked">
+                            <div class="developername-container">
+                                <p class="font-weight-bold">{{ user.name }}</p>
+                            </div>
+                            <div class="developer-ok-container">
+                                <img class="ok-image" src="images/ok-black.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="developer-container-checked">
+                            <div class="developername-container">
+                                <p class="font-weight-bold">{{ user.name }}</p>
+                            </div>
+                            <div class="developer-ok-container">
+                                <img class="ok-image" src="images/ok-green.png">
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        }
+    </div>
+    <button class="save-button clickable" (click)="updateProject()">speichern</button>
+</div>
+
+<app-footer></app-footer>

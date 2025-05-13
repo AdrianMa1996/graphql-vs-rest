@@ -1,0 +1,39 @@
+.logout-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 75px;
+}
+
+.edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.logout-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.logout-button{
+    width: 225px;
+}
+
+.profile-picture-container{
+    width: 225px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.profile-picture {
+    height: 225px;
+    width: 225px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.save-button {
+    margin-bottom: 75px;
+}
